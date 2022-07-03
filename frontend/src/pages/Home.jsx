@@ -19,13 +19,16 @@ const Home = () => {
     fetchWorkouts();
   }, []);
 
-  return <div>
-    <div className="workouts">
-        {workouts && workouts.map((workout) => (
+  return (
+    <div className="home">
+      <div className="workouts">
+        {workouts &&
+          workouts.map((workout) => (
             <Workout key={workout._id} workout={workout} />
-        ))}
+          ))}
+      </div>
+      <WorkoutForm />
     </div>
-    <WorkoutForm />
-  </div>;
+  );
 };
 export default Home;
